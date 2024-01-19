@@ -5,7 +5,8 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(4);
+        var linkedList = new LinkedList(7);
+        linkedList.Push(4);
 
         PrintToConsole(linkedList);
     }
