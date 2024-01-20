@@ -30,4 +30,31 @@ public class LinkedList
         Length ++;
         return newNode;
     }
+
+    public Node? Pop()
+    {
+        if (Head == null)
+            return null;
+
+        var pre = Head;
+        var temp = Head;
+
+        while (temp.Next != null)
+        {
+            pre = temp;
+            temp = temp.Next;
+        }
+
+        Tail = pre;
+        Tail.Next = null;
+        Length--;
+
+        if (Length == 0)
+        {
+            Head = null;
+            Tail = null;
+        }
+
+        return temp;
+    }
 }
