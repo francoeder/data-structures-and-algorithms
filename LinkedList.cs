@@ -77,4 +77,20 @@ public class LinkedList
 
         return newNode;
     }
+
+    public Node? Shift()
+    {
+        if (Head == null) return null;
+        
+        var temp = Head;
+        Head = Head.Next;
+        temp!.Next = null;
+
+        Length--;
+
+        if (Length == 0)
+            Tail = null;
+
+        return temp;
+    }
 }

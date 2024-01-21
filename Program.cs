@@ -5,17 +5,21 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(11);
+        var linkedList = new LinkedList(1);
+        linkedList.Push(3);
         PrintToConsole(linkedList, "Original Linked List");
 
-        linkedList.Pop();
-        PrintToConsole(linkedList, "Linked List after Pop()");
+        var firstNode = linkedList.Shift();
+        PrintToConsole(firstNode!, "First shifted node");
+        PrintToConsole(linkedList, "Linked List after first Shift()");
 
-        linkedList.Unshift(3);
-        PrintToConsole(linkedList, "Linked List after Unshift(3)");
+        var secondNode = linkedList.Shift();
+        PrintToConsole(secondNode!, "Second shifted node");
+        PrintToConsole(linkedList, "Linked List after second Shift()");
 
-        linkedList.Unshift(7);
-        PrintToConsole(linkedList, "Linked List after Unshift(7)");
+        var thirdNode = linkedList.Shift();
+        PrintToConsole(thirdNode!, "Third shifted node");
+        PrintToConsole(linkedList, "Linked List after third Shift()");
     }
 
     static void PrintToConsole(object model, string title)
