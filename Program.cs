@@ -5,21 +5,17 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(1);
-        linkedList.Push(2);
+        var linkedList = new LinkedList(11);
         PrintToConsole(linkedList, "Original Linked List");
 
-        var removedNode = linkedList.Pop();
-        PrintToConsole(removedNode!, "Removed Node on first Pop()");
-        PrintToConsole(linkedList, "Linked List after first Pop()");
+        linkedList.Pop();
+        PrintToConsole(linkedList, "Linked List after Pop()");
 
-        removedNode = linkedList.Pop();
-        PrintToConsole(removedNode!, "Removed Node on second Pop()");
-        PrintToConsole(linkedList, "Linked List after second Pop()");
+        linkedList.Unshift(3);
+        PrintToConsole(linkedList, "Linked List after Unshift(3)");
 
-        removedNode = linkedList.Pop();
-        PrintToConsole(removedNode!, "Removed Node on third Pop()");
-        PrintToConsole(linkedList, "Linked List after third Pop()");
+        linkedList.Unshift(7);
+        PrintToConsole(linkedList, "Linked List after Unshift(7)");
     }
 
     static void PrintToConsole(object model, string title)

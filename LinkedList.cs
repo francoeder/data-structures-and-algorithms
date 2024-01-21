@@ -57,4 +57,24 @@ public class LinkedList
 
         return temp;
     }
+
+    public Node Unshift(int value)
+    {
+        var newNode = new Node(value);
+
+        if (Head == null)
+        {
+            Head = newNode;
+            Tail = newNode;
+        }
+        else
+        {
+            newNode.Next = Head;
+            Head = newNode;
+        }
+
+        Length++;
+
+        return newNode;
+    }
 }
