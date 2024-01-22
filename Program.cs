@@ -5,21 +5,22 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(1);
-        linkedList.Push(2);
+        var linkedList = new LinkedList(11);
         linkedList.Push(3);
-        linkedList.Push(4);
-        linkedList.Push(5);
+        linkedList.Push(23);
+        linkedList.Push(7);
         PrintToConsole(linkedList, "Original Linked List");
 
-        var nodeObtained = linkedList.Get(3);
-        PrintToConsole(nodeObtained!, $"Node obtained through index {3}");
+        var nodeChanged = linkedList.Set(2, 21);
+        PrintToConsole(nodeChanged!, $"Was there any success in changing the node through index {2}?");
 
-        var nullNode = linkedList.Get(-1);
-        PrintToConsole(nullNode!, $"Node obtained through index {-1}");
+        var nullNode = linkedList.Set(-1, 7);
+        PrintToConsole(nullNode!, $"Was there any success in changing the node through index {-1}?");
 
-        nullNode = linkedList.Get(45);
-        PrintToConsole(nullNode!, $"Node obtained through index {45}");
+        nullNode = linkedList.Set(45, 7);
+        PrintToConsole(nullNode!, $"Was there any success in changing the node through index {45}?");
+
+        PrintToConsole(linkedList, "Linked List after changes");
     }
 
     static void PrintToConsole(object model, string title)

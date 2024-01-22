@@ -106,4 +106,15 @@ public class LinkedList
 
         return temp;
     }
+
+    public bool Set(int index, int value)
+    {
+        var temp = Get(index);
+        
+        if (temp == null)
+            return false;
+        
+        temp.Value = value;
+        return true;
+    }
 }
