@@ -93,4 +93,17 @@ public class LinkedList
 
         return temp;
     }
+
+    public Node? Get(int index)
+    {
+        if (index < 0 || index >= Length) return null;
+
+        var temp = Head;
+        for (int i = 0; i < index; i++)
+        {
+            temp = temp!.Next;
+        }
+
+        return temp;
+    }
 }

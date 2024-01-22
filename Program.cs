@@ -6,20 +6,20 @@ class Program
     static void Main()
     {
         var linkedList = new LinkedList(1);
+        linkedList.Push(2);
         linkedList.Push(3);
+        linkedList.Push(4);
+        linkedList.Push(5);
         PrintToConsole(linkedList, "Original Linked List");
 
-        var firstNode = linkedList.Shift();
-        PrintToConsole(firstNode!, "First shifted node");
-        PrintToConsole(linkedList, "Linked List after first Shift()");
+        var nodeObtained = linkedList.Get(3);
+        PrintToConsole(nodeObtained!, $"Node obtained through index {3}");
 
-        var secondNode = linkedList.Shift();
-        PrintToConsole(secondNode!, "Second shifted node");
-        PrintToConsole(linkedList, "Linked List after second Shift()");
+        var nullNode = linkedList.Get(-1);
+        PrintToConsole(nullNode!, $"Node obtained through index {-1}");
 
-        var thirdNode = linkedList.Shift();
-        PrintToConsole(thirdNode!, "Third shifted node");
-        PrintToConsole(linkedList, "Linked List after third Shift()");
+        nullNode = linkedList.Get(45);
+        PrintToConsole(nullNode!, $"Node obtained through index {45}");
     }
 
     static void PrintToConsole(object model, string title)
