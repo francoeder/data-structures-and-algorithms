@@ -117,4 +117,19 @@ public class LinkedList
         temp.Value = value;
         return true;
     }
+
+    public Node? Insert(int index, int value)
+    {
+        if (index == 0) return Unshift(value);
+        if (index == Length) return Push(value);
+        if (index < 0 || index > Length) return null;
+
+        var newNode = new Node(value);
+        var temp = Get(index - 1);
+
+        newNode.Next = temp!.Next;
+        temp.Next = newNode;
+
+        return newNode;
+    }
 }

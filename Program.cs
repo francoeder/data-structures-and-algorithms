@@ -5,22 +5,19 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(11);
-        linkedList.Push(3);
-        linkedList.Push(23);
-        linkedList.Push(7);
+        var linkedList = new LinkedList(2);
         PrintToConsole(linkedList, "Original Linked List");
 
-        var nodeChanged = linkedList.Set(2, 21);
-        PrintToConsole(nodeChanged!, $"Was there any success in changing the node through index {2}?");
+        var insertedNode = linkedList.Insert(0, 0);
+        PrintToConsole(insertedNode!, $"Inserted Node at index {0}");
 
-        var nullNode = linkedList.Set(-1, 7);
-        PrintToConsole(nullNode!, $"Was there any success in changing the node through index {-1}?");
+        insertedNode = linkedList.Insert(1, 1);
+        PrintToConsole(insertedNode!, $"Inserted Node at index {1}");
 
-        nullNode = linkedList.Set(45, 7);
-        PrintToConsole(nullNode!, $"Was there any success in changing the node through index {45}?");
+        insertedNode = linkedList.Insert(2, 3);
+        PrintToConsole(insertedNode!, $"Inserted Node at index {3}");
 
-        PrintToConsole(linkedList, "Linked List after changes");
+        PrintToConsole(linkedList, "Linked List after insert");
     }
 
     static void PrintToConsole(object model, string title)
