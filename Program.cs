@@ -5,18 +5,16 @@ class Program
 {
     static void Main()
     {
-        var linkedList = new LinkedList(2);
+        var linkedList = new LinkedList(11);
+        linkedList.Push(3);
+        linkedList.Push(23);
+        linkedList.Push(7);
         PrintToConsole(linkedList, "Original Linked List");
 
-        var insertedNode = linkedList.Insert(0, 0);
-        PrintToConsole(insertedNode!, $"Inserted Node at index {0}");
-
-        insertedNode = linkedList.Insert(1, 1);
-        PrintToConsole(insertedNode!, $"Inserted Node at index {1}");
-
-        insertedNode = linkedList.Insert(2, 3);
-        PrintToConsole(insertedNode!, $"Inserted Node at index {3}");
-
+        var index = 2;
+        var removedNode = linkedList.Remove(index);
+        PrintToConsole(removedNode!, $"Removed Node at index {index}");
+        
         PrintToConsole(linkedList, "Linked List after insert");
     }
 

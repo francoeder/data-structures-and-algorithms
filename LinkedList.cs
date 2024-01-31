@@ -132,4 +132,20 @@ public class LinkedList
 
         return newNode;
     }
+
+    public Node? Remove(int index)
+    {
+        if (index == 0) return Shift();
+        if (index == Length -1) return Pop();
+        if (index < 0 || index > Length) return null;
+
+        var before = Get(index -1);
+        var temp = before!.Next!;
+
+        before.Next = temp.Next;
+        temp.Next = null;
+        Length--;
+
+        return temp;
+    }
 }
